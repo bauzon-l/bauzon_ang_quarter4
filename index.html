@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ICT Project Portfolio</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+      .profile-img {
+        width: 230px;
+        height: auto;
+        border-radius: 5%;
+        object-fit: cover;
+      }
+      .section {
+        margin-top: 30px;
+      }
+      body{
+        font-family: helvetica;
+      }
+    </style>
+  </head>
+  <body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="index.html">ICT Projects Portfolio</a>
+        <form class="d-flex ms-3" role="search">
+          <input class="form-control me-2" type="search" placeholder="Search">
+          <button class="btn btn-primary" type="submit">Search</button>
+        </form>
+        <div class="collapse navbar-collapse show ms-3">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item"><a class="nav-link" href="">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="index.html">Quarter 1</a></li>
+            <li class="nav-item"><a class="nav-link" href="index.html">Quarter 2</a></li>
+            <li class="nav-item"><a class="nav-link" href="index.html">Quarter 3</a></li>
+            <li class="nav-item"><a class="nav-link" href="index.html">Quarter 4</a></li>
+            <li class="nav-item"><a class="nav-link" href="index.html">What's Next</a></li>
+            <li class="nav-item"><a class="nav-link" href="index.html">Rate Us</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container mt-4">
+      <h1 class="text-center mb-4">My Online Portfolio</h1>
+
+<h3 class="text-center">Members:</h3>
+      <div class="text-center">
+        <img src="us.jpg" class="profile-img mb-3" alt="My Picture"><br>
+        <p><b>Name:</b> Lucas Bauzon</p>
+        <p><b>Grade & Section:</b> 9-Ruby</p>
+        <p><b>Ambition:</b> Sports Doctor</p>
+      </div><br>
+      <div class="text-center">
+        <p><b>Name:</b> Angelo Ang</p>
+        <p><b>Grade & Section:</b> 9-Ruby</p>
+        <p><b>Ambition:</b> Baller</p>
+      </div>
+
+      <div class="section">
+        <h3>Quarter 1 Project</h3>
+        <p>View Projects: <br> <a href="https://bauzon-l.github.io/bauzon_quarter1/ss" class="btn btn-primary">Bauzon</a><a href="https://bauzon-l.github.io/ang_quarter1/" class="btn btn-primary">Ang</a></p>
+      </div>
+      <div class="section">
+        <h3>Quarter 2 Project</h3>
+        <p>View Projects: <br> <a href="" class="btn btn-primary">Bauzon</a><a href="https://bauzon-l.github.io/ang_quarter2/" class="btn btn-primary">Ang</a></p>
+      </div>
+      <div class="section">
+        <h3>Quarter 3 Project</h3>
+        <p>View Projects: <br> <a href="https://bauzon-l.github.io/bauzon_ang_quarter3/" class="btn btn-primary">Bauzon</a><a href="https://bauzon-l.github.io/bauzon_ang_quarter3/" class="btn btn-primary">Ang</a></p>
+      </div>
+      <div class="section">
+        <h3>Quarter 4 Project</h3>
+        <p>View Projects: <br> <a href="index.html" class="btn btn-primary">Bauzon</a><a href="index.html" class="btn btn-primary">Ang</a></p>
+      </div>
+
+      <div class="section">
+        <h3>What's Next?</h3>
+        <p>Next year we want to get better at coding.</p>
+      </div>
+
+      <div class="section">
+        <h3>Rate Us</h3>
+        <p>Enter two ratings from 1 to 10:</p>
+        <input type="number" id="r1" class="form-control mb-2" placeholder="This website">
+        <input type="number" id="r2" class="form-control mb-2" placeholder="Our old projects">
+        <button onclick="rate()" class="btn btn-success">Submit</button>
+        <p id="output" class="fw-bold mt-2"></p>
+      </div>
+
+      <div class="section">
+        <h4>References</h4>
+        <ul>
+          <li><a href="https://www.w3schools.com" target="_blank">w3schools.com</a></li>
+        </ul>
+      </div>
+
+      <footer class="mt-5 bg-light text-center p-3">
+        <p class="mb-1">Campus: OB Montessori</p>
+        <p class="mb-0">Group Members: Bauzon, Ang</p>
+      </footer>
+    </div>
+
+
+    <script>
+      function rate() {
+        var r1 = document.getElementById("r1").value;
+        var r2 = document.getElementById("r2").value;
+        var output = document.getElementById("output");
+
+        r1 = parseInt(r1);
+        r2 = parseInt(r2);
+
+        if (isNaN(r1) || isNaN(r2)) {
+          output.innerHTML = "Please enter valid numbers.";
+          return;
+        }
+
+        var avg = Math.round((r1 + r2) / 2);
+        var message = "";
+
+        if (avg >= 9) {
+          message = "Excellent!";
+        } else if (avg >= 7) {
+          message = "Good job!";
+        } else {
+          message = "Thanks for the feedback!";
+        }
+
+        output.innerHTML = "Average Rating: " + avg + " – " + message;
+      }
+    </script>
+
+  </body>
+  </html>
